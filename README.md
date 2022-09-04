@@ -8,7 +8,7 @@ NUAA 图书馆勤工俭学代码任务
 
 运行代码：
 
-```python
+```bash
 python task-1-QS\qs.py
 ```
 
@@ -18,7 +18,7 @@ python task-1-QS\qs.py
 
 运行代码：
 
-```
+```bash
 python task-2-KR-ARWU\kr.py
 ```
 

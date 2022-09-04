@@ -1,6 +1,12 @@
-import requests
 import json
+import requests
+import pandas as pd
 
+df = pd.read_excel("task-2-KR-ARWU/2022软科世界大学学术排名.xlsx", usecols=[4], names=None)  # 读取项目名称列,不要列名
+df_li = df.values.tolist()
+printf(df_li[0])
+printf(df_li[1])
+exit(0)
 url='https://www.shanghairanking.com/api/pub/v1/arwu/rank?version=2022'
 
 def get_url(url):
@@ -20,7 +26,6 @@ def get_url(url):
 
 dataset = get_url(url)['data']['rankings']
 idx = len(dataset)
-
 with open("task-2-KR-ARWU\kr.json", "w", encoding = 'utf-8') as f:
     dict = []
     for i in range(idx):
@@ -31,8 +36,8 @@ with open("task-2-KR-ARWU\kr.json", "w", encoding = 'utf-8') as f:
         Award = dataset[i]['indData']['148']
         HiCi = dataset[i]['indData']['149']
         NS = dataset[i]['indData']['150']
-        PCP = dataset[i]['indData']['151']
-        PUB = dataset[i]['indData']['152']
+        PCP = dataset[i]['indData']['152']
+        PUB = dataset[i]['indData']['151']
         Total = dataset[i]['score']
         dict.append({"排名": WorldRank,
                 "学校名称": UniName,
