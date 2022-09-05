@@ -30,6 +30,7 @@ with open("task-2-KR-ARWU\kr.json", "w", encoding = 'utf-8') as f:
         WorldRank = dataset[i]['ranking']
         UniName = dataset[i]['univNameEn']
         Region = dataset[i]['region']
+        regionRanking = dataset[i]['regionRanking']
         Alumini = dataset[i]['indData']['147']
         Award = dataset[i]['indData']['148']
         HiCi = dataset[i]['indData']['149']
@@ -40,6 +41,7 @@ with open("task-2-KR-ARWU\kr.json", "w", encoding = 'utf-8') as f:
         dict.append({"排名": WorldRank,
                 "学校名称": df_li[i][1],
                 "国家/地区": df_li[i][0],
+                "国家/地区排名": regionRanking,
                 "总分": Total,
                 "校友获奖": Alumini,
                 "教师获奖": Award,
