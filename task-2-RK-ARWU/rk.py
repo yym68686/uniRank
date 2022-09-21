@@ -1,8 +1,10 @@
+import os
 import json
 import requests
 import pandas as pd
 
-df = pd.read_excel("task-2-KR-ARWU/2022软科世界大学学术排名.xlsx", usecols=[2, 4], names=None)  # 读取项目名称列,不要列名
+dirpath = os.path.abspath(os.path.dirname(__file__))
+df = pd.read_excel(dirpath + "/2022软科世界大学学术排名.xlsx", usecols=[2, 4], names=None)  # 读取项目名称列,不要列名
 df_li = df.values.tolist()
 
 url='https://www.shanghairanking.com/api/pub/v1/arwu/rank?version=2022'
@@ -24,7 +26,7 @@ def get_url(url):
 
 dataset = get_url(url)['data']['rankings']
 idx = len(dataset)
-with open("task-2-KR-ARWU\kr.json", "w", encoding = 'utf-8') as f:
+with open(dirpath + "/rk.json", "w", encoding = 'utf-8') as f:
     dict = []
     for i in range(idx):
         WorldRank = dataset[i]['ranking']

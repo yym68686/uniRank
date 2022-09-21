@@ -19,7 +19,7 @@ python task-1-QS\qs.py
 运行代码：
 
 ```bash
-python task-2-KR-ARWU\kr.py
+python task-2-RK-ARWU\kr.py
 ```
 
 json 在线转换 excel
