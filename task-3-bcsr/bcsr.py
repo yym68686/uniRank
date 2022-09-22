@@ -24,7 +24,6 @@ def get_url(url):
 
 
 subjectCodeset = get_url(subjectCodeUrl)['data']
-# exit(0)
 with open(dirpath + "/bcsr.json", "w", encoding = 'utf-8') as f:
     dict = []
     for subject in subjectCodeset:
@@ -33,10 +32,15 @@ with open(dirpath + "/bcsr.json", "w", encoding = 'utf-8') as f:
             idx = len(dataset)
             for i in range(idx):
                 Rank2022 = dataset[i]['ranking']
+                try:
+                    Rank2021 = dataset[i]['contrastRanking']['2021']
+                except:
+                    Rank2021 = "无"
                 rankPctTop = dataset[i]['rankPctTop']
                 univNameCn = dataset[i]['univNameCn']
                 score = dataset[i]['score']
                 dict.append({"2022排名": Rank2022,
+                            "2021排名": Rank2021,
                             "全部层次": rankPctTop,
                             "学校": univNameCn,
                             "总分": score,
