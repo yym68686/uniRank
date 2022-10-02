@@ -39,3 +39,15 @@ https://www.shanghairanking.cn/api/pub/v1/bcsr/rank?target_yr=2022&subj_code=010
 学科代码 API 接口
 
 https://www.shanghairanking.cn/api/pub/v1/bcsr/subj?year=2022
+
+# Task 4
+
+下载 2022 年软科世界一流学科排名。
+
+网址：
+
+https://www.shanghairanking.cn/rankings/gras/2022
+
+api：
+
+https://www.shanghairanking.cn/api/pub/v1/gras/rank?year=2022&subj_code=RS0101
