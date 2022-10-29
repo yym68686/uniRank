@@ -1,6 +1,6 @@
-# library-internship
+# uniRank
 
-NUAA 图书馆勤工俭学代码任务
+世界主流机构大学排名爬虫：qs，usnews，软科
 
 # Task 1
 
@@ -53,6 +53,8 @@ api：
 https://www.shanghairanking.cn/api/pub/v1/gras/rank?year=2022&subj_code=RS0101
 
 # Task 5
+
+下载 usnews 世界大学数据排名。
 
 2022 usnews 大学排名网址：https://www.usnews.com/education/best-global-universities/rankings
 
