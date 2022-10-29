@@ -51,3 +51,48 @@ https://www.shanghairanking.cn/rankings/gras/2022
 api：
 
 https://www.shanghairanking.cn/api/pub/v1/gras/rank?year=2022&subj_code=RS0101
+
+# Task 5
+
+2022 usnews 大学排名网址：https://www.usnews.com/education/best-global-universities/rankings
+
+api：https://www.usnews.com/education/best-global-universities/search?format=json&page=1
+
+利用 js 脚本下载 json 数据：
+
+```javascript
+let items = [];
+for(let i = 1; i <= 217; i++) {
+    result = await fetch(`https://www.usnews.com/education/best-global-universities/search?format=json&page=${i}`, {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+    "cache-control": "no-cache",
+    "pragma": "no-cache",
+    "sec-ch-ua": "\"Chromium\";v=\"106\", \"Google Chrome\";v=\"106\", \"Not;A=Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?1",
+    "sec-ch-ua-platform": "\"Android\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin"
+  },
+  "referrer": "https://www.usnews.com/",
+  "referrerPolicy": "origin",
+  "body": null,
+  "method": "GET",
+  "mode": "cors",
+  "credentials": "include"
+});
+    uni = await result.json();
+    items.push(...uni['items']);
+}
+let blob  = new Blob([JSON.stringify(items)]);
+var a = document.createElement('a');
+a.download = "uni.json";
+a.href = window.URL.createObjectURL(blob);
+a.click();
+```
+
+- 多下载几次，有时候下载数据不对
+- 在开发者工具打开控制台下载
+- 2022 一共 2165 个学校，最后总数据不是 2165，就是下载错误，多尝试几次
