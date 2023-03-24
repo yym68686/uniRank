@@ -2,6 +2,8 @@
 
 世界主流机构大学排名爬虫：qs，usnews，软科
 
+[![Run on Repl.it](https://replit.com/badge/github/yym68686/uniRank)](https://replit.com/new/github/yym68686/uniRank)
+
 安装 python 包依赖
 
 ```
