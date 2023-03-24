@@ -27,6 +27,7 @@ def get_subject_data(url, name):
                 for match in matches:
                     dict[match.group(1)] = match.group(2)
                 with open(name, "w", encoding = 'utf-8') as f:
+                    dict = eval(re.sub(r"&amp;", '&', str(dict)))
                     json.dump(dict, f, ensure_ascii=False, indent=4)
                     f.close()
                 with open(name, "r", encoding = 'utf-8') as f:
