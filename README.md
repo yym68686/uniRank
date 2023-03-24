@@ -2,14 +2,26 @@
 
 世界主流机构大学排名爬虫：qs，usnews，软科
 
+安装 python 包依赖
+
+```
+pip install -r requirements.txt
+```
+
 # Task 1
 
 下载QS世界大学数据排名。
 
-运行代码：
+爬取 2022 数据，运行代码：
 
 ```bash
-python task-1-QS\qs.py
+python task-1-QS\2022qs.py
+```
+
+爬取 2023 数据，运行代码：
+
+```bash
+python task-1-QS\2023qs.py
 ```
 
 # Task 2
