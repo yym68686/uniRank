@@ -36,26 +36,10 @@ def getJSON():
 
 def main():
     data = getJSON()
-    # new_dict = {}
-    # for TeacherName, TeacherInfo in result.items():
-    #     for CollegeName, subjectList in TeacherInfo.items():
-    #         for zyName in subjectList:
-    #             new_dict.setdefault(TeacherName, {}).setdefault(CollegeName + '_' + zyName, []).extend(subjectList[zyName])
-    ans = []
-    for name, departments in data.items():
-        result = []
-        result.append(name)
-        for department, courses in departments.items():
-            result.append(department)
-            result.extend(courses)
-        ans.append(result)
-    
-    df = pd.DataFrame(ans)
-    df = pd.DataFrame(df.values.tolist())
-    df.to_excel(dirpath + '/result.xlsx')
-
-    # df = pd.DataFrame(new_dict).T
-    # df.to_excel(dirpath + '/result.xlsx')
+    result = [[k, k1, v2] for k, v in data.items() for k1, v1 in v.items() for v2 in v1]
+    df = pd.DataFrame(result)
+    df.columns = ['姓名', '学院', '学科方向']
+    df.to_excel(dirpath + '/result.xlsx', index=False)
 
 if __name__ == '__main__':
     main()
