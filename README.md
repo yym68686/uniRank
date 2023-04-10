@@ -1,6 +1,12 @@
 # uniRank
 
+## 简介
+
 世界主流机构大学排名爬虫：qs，usnews，软科
+
+南航所有学院导师研究方向爬虫
+
+一键部署到 Replit：
 
 [![Run on Repl.it](https://replit.com/badge/github/yym68686/uniRank)](https://replit.com/new/github/yym68686/uniRank)
 
@@ -10,41 +16,24 @@
 pip install -r requirements.txt
 ```
 
-# Task 1
+## QS 世界大学数据排名
 
-下载QS世界大学数据排名。
+- 2022qs.py 爬取 2022 数据
+- 2023qs.py 爬取 2023 数据
 
-爬取 2022 数据，运行代码：
+## 软科
 
-```bash
-python task-1-QS\2022qs.py
-```
+### 2022 科软世界大学学术排名 arwu
 
-爬取 2023 数据，运行代码：
-
-```bash
-python task-1-QS\2023qs.py
-```
-
-# Task 2
-
-下载科软世界大学学术排名（Academic Ranking of World Universities，简称ARWU）。
-
-运行代码：
-
-```bash
-python task-2-RK-ARWU\kr.py
-```
+kr.py 下载科软世界大学学术排名（Academic Ranking of World Universities，简称ARWU）。
 
 json 在线转换 excel
 
 [在线JSON转Excel工具 - UU在线工具 (wejson.cn)](https://wejson.cn/json2excel/)
 
-# Task 3
+### 2022 软科中国大学专业排名 bcsr
 
-下载 软科中国大学专业排名 bcsr
-
-在浏览器开发者工具里网络中查找 http://127.0.0.1:8651 ，后面跟的 url 就是 API 接口。
+寻找 api 的方法：在浏览器开发者工具里网络中查找 http://127.0.0.1:8651 ，后面跟的 url 就是 API 接口。
 
 中国大学专业排名 API 接口
 
@@ -54,9 +43,7 @@ https://www.shanghairanking.cn/api/pub/v1/bcsr/rank?target_yr=2022&subj_code=010
 
 https://www.shanghairanking.cn/api/pub/v1/bcsr/subj?year=2022
 
-# Task 4
-
-下载 2022 年软科世界一流学科排名。
+### 2022 软科世界一流学科排名
 
 网址：
 
@@ -66,9 +53,13 @@ api：
 
 https://www.shanghairanking.cn/api/pub/v1/gras/rank?year=2022&subj_code=RS0101
 
-# Task 5
+### 2023 软科中国大学排名
 
-下载 usnews 世界大学数据排名。
+主榜数据：
+
+https://www.heywhale.com/mw/dataset/64255ba434db799a8ab0ff5b/file
+
+## usnews 世界大学数据排名
 
 2022 usnews 大学排名网址：https://www.usnews.com/education/best-global-universities/rankings
 
