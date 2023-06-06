@@ -13,7 +13,7 @@
 安装 python 包依赖
 
 ```
-pip install -r requirements.txt
+pip install -r requirements.txt --index-url https://pypi.python.org/simple/
 ```
 
 ## QS 世界大学数据排名
